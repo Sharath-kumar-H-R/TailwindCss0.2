@@ -14,3 +14,8 @@
 .orange{
     @apply w-80 h-80 bg-orange-300 absolute bottom-10 right-0 -z-10 blur-2xl opacity-30 overflow-hidden rounded-full;
 }
+.gradient-text {
+    background: linear-gradient(to right, #87f1ff, #ff87f9, #b487ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
