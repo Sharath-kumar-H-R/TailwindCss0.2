@@ -5,15 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link href="output.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body class="bg-color-primary text-color-white  tracking-wider">
    <header>
+    <!-- Navigation -->
     <nav class="container flex justify-between items-center">
+        <!-- Logo -->
         <div class="py-5 text-orange-400 font-bold text-3xl"><a href="#home">
             <span class="text-color-white">Shree</span>Solutions!
         </a></div>
+        <!-- Desktop Menu -->
         <div>
-            <ul class="flex items-center space-x-9">
+            <ul class="hidden lg:flex items-center space-x-9">
                 <li><a href="#home" class="hover:text-orange-400 ease-in duration-200">Home</a></li>
                 <li><a href="#Features" class="hover:text-orange-400 ease-in duration-200">Features</a></li>
                 <li><a href="#Testimonials" class="hover:text-orange-400 ease-in duration-200">Testimonials</a></li>
@@ -21,11 +25,59 @@
                 <li><a href="#Blog" class="hover:text-orange-400 ease-in duration-200">Blog</a></li>
                 <li><a href="#Contact" class="hover:text-orange-400 ease-in duration-200">Contact</a></li>
                 <li><button class="bg-orange-400 py-4 px-4 rounded-md font-bold hover:opacity-80 ease-in duration-200">Free Trial</button></li>
+            </ul>   
+        </div>
+        <!-- Mobile Menu Hamburger Icon -->
+        <div id="hamburger" class="lg:hidden cursor-pointer z-50">
+            <i class="fas fa-bars"></i> <!-- Hamburger icon -->
+        </div>
+        <!-- Mobile Menu Cancel Icon -->
+        <div id="cancel" class="hidden lg:hidden cursor-pointer z-50">
+            <i class="fas fa-times"></i> <!-- Cancel icon -->
+        </div>
+        <!-- Mobile Menu -->
+        <div id="menu" class="hidden bg-color-primary-dark h-[100vh] absolute inset-0">
+            <ul class="h-full grid place-items-center py-20">
+                <li><a href="#home" class="hlink hover:text-orange-400 ease-in duration-200">Home</a></li>
+                <li><a href="#Features" class="hlink hover:text-orange-400 ease-in duration-200">Features</a></li>
+                <li><a href="#Testimonials" class="hlink hover:text-orange-400 ease-in duration-200">Testimonials</a></li>
+                <li><a href="#Pricing" class="hlink hover:text-orange-400 ease-in duration-200">Pricing</a></li>
+                <li><a href="#Blog" class="hlink hover:text-orange-400 ease-in duration-200">Blog</a></li>
+                <li><a href="#Contact" class="hlink hover:text-orange-400 ease-in duration-200">Contact</a></li>
+                <li><button class="bg-orange-400 py-4 px-4 rounded-md font-bold hover:opacity-80 ease-in duration-200">Free Trial</button></li>  
             </ul>
-            
         </div>
     </nav>
    </header>
+  <script>
+    // Selecting elements
+    const hamburger = document.querySelector("#hamburger"); // Hamburger icon
+    const cancel = document.querySelector("#cancel"); // Cancel icon
+    const menu = document.querySelector("#menu"); // Mobile menu
+    const hlinks = document.querySelectorAll(".hlink"); // Mobile menu links
 
+    // Event listener for hamburger icon
+    hamburger.addEventListener("click", () => {
+        menu.classList.toggle('hidden'); // Toggle mobile menu visibility
+        hamburger.classList.toggle('hidden'); // Toggle hamburger icon visibility
+        cancel.classList.toggle('hidden'); // Toggle cancel icon visibility
+    });
+
+    // Event listener for cancel icon
+    cancel.addEventListener("click", () => {
+        menu.classList.toggle('hidden'); // Toggle mobile menu visibility
+        hamburger.classList.toggle('hidden'); // Toggle hamburger icon visibility
+        cancel.classList.toggle('hidden'); // Toggle cancel icon visibility
+    });
+
+    // Event listener for mobile menu links
+    hlinks.forEach(link => {
+        link.addEventListener("click", () => {
+            menu.classList.add('hidden'); // Hide mobile menu
+            hamburger.classList.remove('hidden'); // Show hamburger icon
+            cancel.classList.add('hidden'); // Hide cancel icon
+        });
+    });
+  </script>
 </body>
 </html>
