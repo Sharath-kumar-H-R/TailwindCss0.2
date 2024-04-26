@@ -2940,6 +2940,10 @@ video {
 }
 
 @media (min-width: 768px) {
+  .md\:relative {
+    position: relative;
+  }
+
   .md\:order-2 {
     order: 2;
   }
