@@ -20,7 +20,7 @@
             <ul class="hidden lg:flex items-center space-x-9 ">
                 <li><a href="#home" class="hover:text-orange-400 ease-in duration-200">Home</a></li>
                 <li><a href="#Features" class="hover:text-orange-400 ease-in duration-200">Features</a></li>
-                <li><a href="#Testimonials" class="hover:text-orange-400 ease-in duration-200">Testimonials</a></li>
+                <li><a href="#Reviews" class="hover:text-orange-400 ease-in duration-200">Reviews</a></li>
                 <li><a href="#Pricing" class="hover:text-orange-400 ease-in duration-200">Pricing</a></li>
                 <li><a href="#Blog" class="hover:text-orange-400 ease-in duration-200">Blog</a></li>
                 <li><a href="#Contact" class="hover:text-orange-400 ease-in duration-200">Contact</a></li>
@@ -40,7 +40,7 @@
             <ul class="h-full grid place-items-center py-20">
                 <li><a href="#home" class="hlink hover:text-orange-400 ease-in duration-200">Home</a></li>
                 <li><a href="#Features" class="hlink hover:text-orange-400 ease-in duration-200">Features</a></li>
-                <li><a href="#Testimonials" class="hlink hover:text-orange-400 ease-in duration-200">Testimonials</a></li>
+                <li><a href="#Reviews" class="hlink hover:text-orange-400 ease-in duration-200">Reviews</a></li>
                 <li><a href="#Pricing" class="hlink hover:text-orange-400 ease-in duration-200">Pricing</a></li>
                 <li><a href="#Blog" class="hlink hover:text-orange-400 ease-in duration-200">Blog</a></li>
                 <li><a href="#Contact" class="hlink hover:text-orange-400 ease-in duration-200">Contact</a></li>
@@ -156,6 +156,57 @@
 </div>
 </section>
 
+<section id="Reviews">
+    <div class="container py-20">
+        <div class="text-center m-auto mb-20 md:w-1/2">
+            <h4 class="font-bold text-orange-400 mb-4">User Reviews</h4>
+            <h1 class="title gradient-text">Explore authentic user reviews, providing insights into their firsthand experiences and satisfaction with our products and services</h1>
+        </div>  
+        <!-- user images -->
+        <div class="mt-8">
+            <div class="flex items-center justify-center flex-wrap">
+                <img src="images/users/u1.jpg" alt="users" class="h-20 w-20 rounded-full p-1 m-3 cursor-pointer user-photos active" onclick="showReviews(event)">
+                <img src="images/users/u2.jpg" alt="users" class="h-20 w-20 rounded-full p-1 m-3 cursor-pointer user-photos " onclick="showReviews(event)">
+                <img src="images/users/u3.jpg" alt="users" class="h-20 w-20 rounded-full p-1 m-3 cursor-pointer user-photos " onclick="showReviews(event)">
+                <img src="images/users/u4.jpg" alt="users" class="h-20 w-20 rounded-full p-1 m-3 cursor-pointer user-photos " onclick="showReviews(event)">
+                <img src="images/users/u5.jpg" alt="users" class="h-20 w-20 rounded-full p-1 m-3 cursor-pointer user-photos " onclick="showReviews(event)">
+            </div>
+            
+            <div class="grid place-content-center text-center m-auto md:w-4/5 min-h-[40vh]">
+                <div class="user-text active-text">
+                    <p class="md:text-2xl mb-6">Discover why our users rave about their experiences with us. Join the conversation and see what sets us apart.</p>
+                    <h4 class="font-bold text-orange-400 mb-1">Aaradhya</h4>
+                    <p>Vue Developer</p>
+                </div>
+
+                <div class="user-text active-text">
+                    <p class="md:text-2xl mb-6">Uncover the reasons behind our users' enthusiastic endorsements. Engage with us and witness the qualities that make us stand out.</p>
+                    <h4 class="font-bold text-orange-400 mb-1">Ananya</h4>
+                    <p>React Developer</p>
+                </div>
+
+                <div class="user-text active-text">
+                    <p class="md:text-2xl mb-6">Delve into the reasons our users sing our praises. Connect with us and witness firsthand what makes us unique.</p>
+                    <h4 class="font-bold text-orange-400 mb-1">Ishita</h4>
+                    <p>Java Developer</p>
+                </div>
+
+                <div class="user-text active-text">
+                    <p class="md:text-2xl mb-6">Explore why our users are delighted with their interactions. Connect with us and discover our distinguishing features.</p>
+                    <h4 class="font-bold text-orange-400 mb-1">Riya</h4>
+                    <p>UI/UX Developer</p>
+                </div>
+
+                <div class="user-text active-text">
+                    <p class="md:text-2xl mb-6">Find out why our users are thrilled with their encounters. Engage with us and experience the factors that make us exceptional.</p>
+                    <h4 class="font-bold text-orange-400 mb-1">Nisha</h4>
+                    <p>Back-end Developer</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
 
 </main>
 
@@ -188,6 +239,24 @@
             cancel.classList.add('hidden'); // Hide cancel icon
         });
     });
+
+// Users Experience
+const userText = document.getElementsByClassName("user-text");
+const userphoto = document.getElementsByClassName("user-photos");
+
+function showReviews(event) {
+    for (const userpic of userphoto) {
+        userpic.classList.remove('active');
+    }
+    for (const userTexts of userText) {
+        userTexts.classList.remove('active-text');
+    }
+    
+    const index = Array.from(userphoto).indexOf(event.currentTarget);
+    userText[index].classList.add('active-text');
+    userphoto[index].classList.add('active');
+}
+
   </script>
 </body>
 </html>

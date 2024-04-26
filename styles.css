@@ -19,3 +19,14 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
+.user-text{
+    display: none;
+}
+
+.user-text.active-text{
+   display: block;
+}
+
+.user-photos.active{
+    border: 2px solid #ff7d3b;
+}
